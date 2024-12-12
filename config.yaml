@@ -1,0 +1,28 @@
+data:
+    train_dir: "dataset/train_images"
+    val_dir: "dataset/val_images"
+    img_size: 8
+    num_train_samples: 20
+    num_val_samples: 10
+    colors_dir: "dataset/colors.xlsx"
+
+model:
+    num_epochs: 100
+    batch_size: 32
+    learning_rate: 0.001
+    input_size: [8, 8]
+    number_of_layers: 3
+    use_gpu: false
+    model_path: "model/model_test.pth"
+    filters:
+        - 32
+        - 64
+        - 128 # Количество фильтров в каждом слое
+    kernel_sizes:
+        - 3
+        - 3
+        - 3 # Размеры ядер свёртки
+
+predict:
+    image_path: "dataset/val_images/Blue/Blue_0.png"
+    model_path: "model/model.pth"
